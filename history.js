@@ -9,7 +9,7 @@ document.addEventListener('DOMContentLoaded', () => {
     loadHistory(); // reload with goal applied
   });
 
-  loadHistory(); // initial load
+  loadHistory(); 
 });
 
 function loadHistory() {
@@ -17,8 +17,7 @@ function loadHistory() {
     .then(res => res.json())
     .then(data => {
       const tbody = document.getElementById('historyTableBody');
-      tbody.innerHTML = ''; // clear previous rows
-
+      tbody.innerHTML = ''; 
       data.forEach(entry => {
         const row = document.createElement('tr');
 
