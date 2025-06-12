@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Calorie Tracker</title>
+  <script src="index.js" defer></script>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body class="bg-gray-50 text-gray-800 min-h-screen flex flex-col items-center p-6">
+
+  <div class="w-full max-w-3xl bg-white rounded-lg shadow-md p-6">
+    <h1 class="text-3xl font-bold mb-4 text-center text-blue-600">Calorie Tracker</h1>
+
+    <p class="text-lg mb-6 text-center">Input the name of the food eaten and the amount of calories it contained</p>
+
+    <form onsubmit="submitForm(event)" class="space-y-4">
+      <div>
+        <label for="foodname" class="block font-semibold text-gray-700">Name of food:</label>
+        <input type="text" id="foodname" name="foodname"
+          class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:ring-blue-500 focus:border-blue-500"
+          required />
+      </div>
+      <div>
+        <label for="calories" class="block font-semibold text-gray-700">Calories:</label>
+        <input type="number" id="calories" name="calories"
+          class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:ring-blue-500 focus:border-blue-500"
+          required />
+      </div>
+      <div class="flex justify-center">
+        <button type="submit"
+          class="w-full block bg-blue-600 text-white px-6 py-2 rounded-md hover:bg-blue-700 transition">
+          Submit
+        </button>
+      </div>
+    </form>
+
+    <div class="mt-8 overflow-x-auto">
+      <table id="calorieTable" class="w-full text-center">
+        <thead>
+          <tr>
+            <th>Food</th>
+            <th>Calories</th>
+            <th>Date</th>
+          </tr>
+        </thead>
+        <tbody>
+          
+        </tbody>
+      </table>
+    </div>
+
+  <div></div>
+  <br>
+  <br>
+  <div>
+  <h2 class="w-full text-center font-bold text-xl">Total Calories: </h2>
+  <h2 id="totalCalories" class="w-full text-center font-bold text-blue-600"></h2>
+  <br>
+  <br>
+  <br>
+  <button onSubmit="addToDb(event)" class="hidden w-full block bg-blue-600 text-white px-6 py-2 rounded-md hover:bg-blue-700 transition">Save today's calorie count </button>
+  </div>
+  </div>
+</body>
+
+</html>
